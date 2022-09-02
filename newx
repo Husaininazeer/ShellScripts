@@ -1,9 +1,12 @@
 #!/bin/bash
 
-# TODO 
-# Check if a script with the same name exists before making
+# Assumes that $SCRIPTS is aliased to directory which contains all the scripts
 
 touch $SCRIPTS/$1
 chmod +x $SCRIPTS/$1
 echo $'#!/bin/bash \n\n'>> $SCRIPTS/$1
 vim -c 'startinsert' +2 $SCRIPTS/$1
+
+
+# TODO 
+# Check if a script with the same name exists before making
