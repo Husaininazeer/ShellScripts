@@ -1,17 +1,28 @@
 #!/bin/bash 
 
 # TODO
-# Touch a markdown file if it doesnt exist
-# Make a directory with the same name
-# Make the header information:
-#   - title
-#   - description
-#   - date created (use unix time stamp)
-#   - date updated (use unix time stamp)
+# - [x] Make a file with $1
+# - [x] Handle scratch files when there is no $1
+# - [ ] Make files but replace $@ with dots for hierarchy
+# - [ ] Handle commenting for md
+  # - [ ] Abstract to generalise for any filetype (js/jsx etc)
+# - [ ] Handle links to other markdowns
+# - [ ] Handle TODOs
 
-
-mkdir -p $(isosec)
-touch $(isosec)/README.md
 date_created=$( date +%s )
-echo -e "---\ntitle: '${1}'\ndescription: ''\ndate created: '${date_created}'\n---\n\n\n" >> $(isosec)/README.md
-$EDITOR -c 'startinsert' +6 $(isosec)/README.md
+
+if [[ -z $1 ]]; then
+  filename="scratch.$(isosec)".md
+
+  touch $filename
+  echo -e "---\ntitle: \ndescription: ''\ndate created: '${date_created}'\n---\n\n\n" >> $filename
+  $EDITOR -c 'startinsert' +6 $filename
+
+else
+
+  touch $1.md
+  echo -e "---\ntitle: ${1}\ndescription: ''\ndate created: '${date_created}'\n---\n\n\n" >> $1.md
+  $EDITOR -c 'startinsert' +6 $1.md
+  
+fi
+

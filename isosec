@@ -2,4 +2,4 @@
 
 # output the current isosec
 
-date +%Y%m%d%H%M%S
+date +%Y.%m.%d.%H%M%S
