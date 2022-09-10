@@ -1,0 +1,17 @@
+#!/bin/bash 
+
+# TODO
+# Touch a markdown file if it doesnt exist
+# Make a directory with the same name
+# Make the header information:
+#   - title
+#   - description
+#   - date created (use unix time stamp)
+#   - date updated (use unix time stamp)
+
+
+mkdir -p $(isosec)
+touch $(isosec)/README.md
+date_created=$( date +%s )
+echo -e "---\ntitle: '${1}'\ndescription: ''\ndate created: '${date_created}'\n---\n\n\n" >> $(isosec)/README.md
+$EDITOR -c 'startinsert' +6 $(isosec)/README.md

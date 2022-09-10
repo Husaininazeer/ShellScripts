@@ -3,5 +3,3 @@
 # output the date in the fomat I use to record bugs
 
 date +%Y%m%d_%H%M%S
-
-
