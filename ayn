@@ -3,26 +3,33 @@
 # TODO
 # - [x] Make a file with $1
 # - [x] Handle scratch files when there is no $1
+# - [x] Handle AYN_DIR
 # - [ ] Make files but replace $@ with dots for hierarchy
+# - [ ] Add listing functionality (to be able to tab through/visualise pre-existent files)
 # - [ ] Handle commenting for md
   # - [ ] Abstract to generalise for any filetype (js/jsx etc)
-# - [ ] Handle links to other markdowns
+  # - [ ] Handle (back?)links to other markdowns
 # - [ ] Handle TODOs
 
 date_created=$( date +%s )
 
 if [[ -z $1 ]]; then
-  filename="scratch.$(isosec)".md
+  file_name="scratch.$( isosec )".md
 
-  touch $filename
-  echo -e "---\ntitle: \ndescription: ''\ndate created: '${date_created}'\n---\n\n\n" >> $filename
-  $EDITOR -c 'startinsert' +6 $filename
+  touch "$AYN_DIR"/$file_name
+  echo -e "---\ntitle: \ndescription: ''\ndate created: '${date_created}'\n---\n## \n\n\n" >> "$AYN_DIR"/$file_name
+  $EDITOR -c  'startinsert' +6 "$AYN_DIR"/$file_name
 
-else
+elif [[ ! -f "$AYN_DIR"/$1.md ]]; then
 
-  touch $1.md
-  echo -e "---\ntitle: ${1}\ndescription: ''\ndate created: '${date_created}'\n---\n\n\n" >> $1.md
-  $EDITOR -c 'startinsert' +6 $1.md
+  touch "$AYN_DIR"/$1.md
+  echo -e "---\ntitle: \ndescription: ''\ndate created: '${date_created}'\n---\n## \n\n\n" >> "$AYN_DIR"/$1.md
+  $EDITOR -c 'startinsert' +6 "$AYN_DIR"/$1.md
   
+elif [[ -f "$AYN_DIR"/$1.md ]]; then
+  echo "File with name already exists"
+  echo "Opening..."
+  sleep 1.5 
+  $EDITOR "$AYN_DIR"/$1.md
 fi
 
