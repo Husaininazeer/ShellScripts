@@ -1,11 +1,19 @@
 #!/bin/bash 
 
 # TODO
+#######################################################################
+######################################################### File handling
+#######################################################################
 # - [x] Make a file with $1
 # - [x] Handle scratch files when there is no $1
 # - [x] Handle AYN_DIR
 # - [ ] Make files but replace $@ with dots for hierarchy
 # - [ ] Add listing functionality (to be able to tab through/visualise pre-existent files)
+# - [ ] Handle exclusions of personal files (move to another directory for privacy)
+
+#######################################################################
+############################################################### Editing
+#######################################################################
 # - [ ] Handle commenting for md
   # - [ ] Abstract to generalise for any filetype (js/jsx etc)
   # - [ ] Handle (back?)links to other markdowns
@@ -13,23 +21,26 @@
 
 date_created=$( date +%s )
 
+# If there is no input
 if [[ -z $1 ]]; then
   file_name="scratch.$( isosec )".md
 
-  touch "$AYN_DIR"/$file_name
-  echo -e "---\ntitle: \ndescription: ''\ndate created: '${date_created}'\n---\n## \n\n\n" >> "$AYN_DIR"/$file_name
-  $EDITOR -c  'startinsert' +6 "$AYN_DIR"/$file_name
+  touch "$AYN_DIR/$file_name"
+  echo -e "---\ntitle: \ndescription: ''\ndate created: '${date_created}'\n---\n## \n\n\n" >> "$AYN_DIR/$file_name"
+  $EDITOR -c +7 '+ normal A' "$AYN_DIR/$file_name"
 
-elif [[ ! -f "$AYN_DIR"/$1.md ]]; then
+# If there is no file named with the input
+elif [[ ! -f "$AYN_DIR/$1.md" ]]; then
 
-  touch "$AYN_DIR"/$1.md
-  echo -e "---\ntitle: \ndescription: ''\ndate created: '${date_created}'\n---\n## \n\n\n" >> "$AYN_DIR"/$1.md
-  $EDITOR -c 'startinsert' +6 "$AYN_DIR"/$1.md
+  touch "$AYN_DIR/$1.md"
+  echo -e "---\ntitle: \ndescription: ''\ndate created: '${date_created}'\n---\n## \n\n\n" >> "$AYN_DIR/$1.md"
+  $EDITOR -c +7 '+ normal A' "$AYN_DIR/$1.md"
   
-elif [[ -f "$AYN_DIR"/$1.md ]]; then
+# If there is file named with the input
+elif [[ -f "$AYN_DIR/$1.md" ]]; then
   echo "File with name already exists"
-  echo "Opening..."
+  echo "Opening $1 ..."
   sleep 1.5 
-  $EDITOR "$AYN_DIR"/$1.md
+  $EDITOR "$AYN_DIR/$1.md"
 fi
 
