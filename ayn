@@ -10,13 +10,15 @@
 # - [ ] Make files but replace $@ with dots for hierarchy
 # - [ ] Add listing functionality (to be able to tab through/visualise pre-existent files)
 # - [ ] Handle exclusions of personal files (move to another directory for privacy)
+# - [ ] Handle (back?)links to other markdowns
+# - [ ] Include a uuid that is human-friendly
+# - [ ] Handle publishing to a zet-like format/repo
 
 #######################################################################
 ############################################################### Editing
 #######################################################################
 # - [ ] Handle commenting for md
   # - [ ] Abstract to generalise for any filetype (js/jsx etc)
-  # - [ ] Handle (back?)links to other markdowns
 # - [ ] Handle TODOs
 
 date_created=$( date +%s )
