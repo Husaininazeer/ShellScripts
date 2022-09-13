@@ -20,6 +20,7 @@
 # - [ ] Handle commenting for md
   # - [ ] Abstract to generalise for any filetype (js/jsx etc)
 # - [ ] Handle TODOs
+# - [ ] Handle table entry
 
 date_created=$( date +%s )
 

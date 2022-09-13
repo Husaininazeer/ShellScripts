@@ -4,7 +4,9 @@ This is a collection of shell scripts I am writing to make my life easier.
 
 I used to be an avid user of [dendron](https://www.dendron.so/), but as my needs changed, I switched from VSCode emulation of Vim to Vim itself.
 
-I needed shellscripts to replace the functionality that I had once been familiar with. This is the results.
+I needed shell scripts like [ayn](./ayn) to replace the functionality that I had once been familiar with. 
+
+This is an iterative process which has an end goal of fitting my use case, but feel free to fork.
 
 
 ## Scripts
