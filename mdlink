@@ -1,0 +1,11 @@
+#!/bin/bash 
+
+# TODO
+# - [ ] Take in an input and print the brackets needed for links
+# - [ ] Scope out how to make this into a shorcut in vim like in dendron
+# - [ ] Handle selected word being passed through as input
+# - [ ] 
+# - [ ] 
+
+echo "[$@]( )"
+
