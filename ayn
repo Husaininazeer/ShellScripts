@@ -29,14 +29,14 @@ if [[ -z $1 ]]; then
   file_name="scratch.$( isosec )".md
 
   touch "$AYN_DIR/$file_name"
-  echo -e "---\ntitle: \ndescription: ''\ndate created: '${date_created}'\n---\n## \n\n\n" >> "$AYN_DIR/$file_name"
+  echo -e "---\ntitle: \ndescription:   \ndate created: '${date_created}'\n---\n## \n\n\n" >> "$AYN_DIR/$file_name"
   $EDITOR -c +7 '+ normal A' "$AYN_DIR/$file_name"
 
 # If there is no file named with the input
 elif [[ ! -f "$AYN_DIR/$1.md" ]]; then
 
   touch "$AYN_DIR/$1.md"
-  echo -e "---\ntitle: \ndescription: ''\ndate created: '${date_created}'\n---\n## \n\n\n" >> "$AYN_DIR/$1.md"
+  echo -e "---\ntitle: \ndescription:   \ndate created: '${date_created}'\n---\n## \n\n\n" >> "$AYN_DIR/$1.md"
   $EDITOR -c +7 '+ normal A' "$AYN_DIR/$1.md"
   
 # If there is file named with the input

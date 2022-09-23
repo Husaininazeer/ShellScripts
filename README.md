@@ -17,3 +17,5 @@ This is an iterative process which has an end goal of fitting my use case, but f
 1. [ isosec ](./isosec) - print date format in `+%Y%m%d%H%M%S `
 1. [ayn](./ayn) - make an entry for [ Ayn ](https://github.com/husaininazeer/Ayn)
 1. [mdlink](./mdlink) - take in an input and surround with braces and brackets in markdown
+1. [mdtodo](./mdtodo) - prepend `- [ ] ` to the inputs to represent it as a TODO in markdown
+
