@@ -1,0 +1,7 @@
+#!/bin/bash 
+
+
+echo -e "## $( isosec )\n"
+echo -e  "### Worked on  yesterday? \n\n### Demo \n\n### Planning to complete today?\n\n### Blockers? \n\n### ETA if under 3 days \n"
+
+
