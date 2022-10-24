@@ -1,5 +1,27 @@
 #!/bin/bash 
 
 # output the current isosec
+# date +%Y.%m.%d.%H%M%S
 
-date +%Y.%m.%d.%H%M%S
+while getopts 't:h:' flag; do
+  case $flag in 
+    t)
+      COLUMN_NUM=$(( $OPTARG - 1 )) 
+      COLS=$(for i in $(seq 0 $COLUMN_NUM); do echo -n "|"; done)
+      ;;
+    h) 
+      HEADER_NUM=$(( $OPTARG - 1 )) 
+      HASHES=$(for i in $(seq 0 $HEADER_NUM); do echo -n "#"; done)
+      ;;
+    *)
+      echo "Invalid flag: -${flag}, use -t for table column delimiters (|), -h for headers (#)" ;;
+    esac
+  done
+
+if [[ $COLUMN_NUM ]]; then  
+  echo "| $(date +%Y.%m.%d) $COLS"
+elif [[ $HEADER_NUM  ]];then
+  echo "$HASHES $(date +%Y.%m.%d.%H%M%S)"
+else
+  date +%Y.%m.%d.%H%M%S
+fi 

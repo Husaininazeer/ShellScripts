@@ -1,0 +1,5 @@
+#!/bin/bash 
+
+echo -e "## $(isosec)\n\n"
+echo -e "### morning\n\n\n### afternoon\n\n\n### evening\n\n\n"
+

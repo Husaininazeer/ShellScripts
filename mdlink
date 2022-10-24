@@ -1,11 +1,14 @@
 #!/bin/bash 
 
 # TODO
-# - [ ] Take in an input and print the brackets needed for links
+# - [x] Take in an input and print the brackets needed for links
 # - [ ] Scope out how to make this into a shorcut in vim like in dendron
 # - [ ] Handle selected word being passed through as input
-# - [ ] 
+# - [x] List all the files using `getopts` that are in the same directory as a link
 # - [ ] 
 
-echo "[$@]( )"
+related_files=$( ls|grep "$1*" )
 
+echo "[$@](
+${related_files}
+)"
