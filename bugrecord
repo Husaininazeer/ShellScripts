@@ -1,5 +1,5 @@
 #!/bin/bash 
 
 echo "## $(bugdate)"
-echo $' \n WHAT: \n WHERE: \n WHEN: \n TRY: \n - '
+echo $' \nWHAT: \nWHERE: \nWHEN: \nTRY: \n- '
 
