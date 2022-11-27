@@ -16,7 +16,9 @@ This is an iterative process which has an end goal of fitting my use case, but f
 1. [bugrecord](./bugrecord) - print the template that I use for bugs (using bugdate)
 1. [isosec](./isosec) - print date format in `+%Y%m%d%H%M%S `, and handle delimiters
 1. [ayn](./ayn) - make an entry for [Ayn](https://github.com/husaininazeer/Ayn)
-1. [mdlink](./mdlink) - take in an input and surround with braces and brackets in markdown
-1. [mdtodo](./mdtodo) - prepend `- [ ] ` to the inputs to represent it as a TODO in markdown
+1. ~~[mdlink](./mdlink) - take in an input and surround with braces and brackets in markdown~~ deprecated for snippets (ultisnips)
+1. ~~[mdtodo](./mdtodo) - prepend `- [ ] ` to the inputs to represent it as a TODO in markdown~~ deprecated for snippets (ultisnips)
 1. [standupreport](./standupreport) - print report template for standups
 1. [journaltemp](journaltemp) - print a template that I use for journals
+1. [ayn_auto_commit](ayn_auto_commit) - script that auto commits for [Ayn](https://github.com/husaininazeer/Ayn)
+
